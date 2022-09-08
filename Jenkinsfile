@@ -5,7 +5,7 @@ pipeline {
         stages {
             stage('Source') {
                 steps {
-                    git url: 'https://github.com/shanthshivam/sample-java-maven.git'
+                    git url: 'https://github.com/Jhansi1910/sonar_maven_jfrog.git'
                 }
             }
             stage('Build') {
@@ -21,7 +21,7 @@ pipeline {
                     script {
                         def mvnHome = tool 'M3'
                         withSonarQubeEnv() {
-                            bat "${mvnHome}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=java-maven"
+                            bat "${mvnHome}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=demo"
                         }
                     }
                 }
